@@ -91,11 +91,11 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Add title and labels, set font bold and increase font size
     plt.title("Prediction Probability for Disease Occurrence", fontsize=12, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
-    plt.xlabel("Probability", fontsize=8 )  # 添加X轴标签，并设置字体大小和加粗
+    plt.xlabel("Probability", fontsize=7 )  # 添加X轴标签，并设置字体大小和加粗
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
     for i, v in enumerate([sample_prob['No Disease Occurrence'], sample_prob['Disease Occurrence']]):  # 为每个条形图添加概率文本标签
-        plt.text(v + 0.01, i, f"{v:.2f}", va='center', fontsize=8, color='black' )  # 设置标签位置、字体加粗
+        plt.text(v + 0.01, i, f"{v:.2f}", va='center', fontsize=6, color='black' )  # 设置标签位置、字体加粗
 
     # Hide other axes (top, right, bottom)
     plt.gca().spines['top'].set_visible(False)  # 隐藏顶部边框
@@ -107,15 +107,13 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     if predicted_class == 1:  # 如果预测为疾病发生，给出相关建议
         advice = (
-            f"**Recommendation:** According to our model, you may require electrical cardioversion. "
-            f"The probability of needing electrical cardioversion is {probability:.1f}%. "
-            "This suggests that you may have a higher risk of requiring this treatment. "
-            "I recommend consulting with a cardiologist for further examination and possible treatment options."
+            f"**Recommendation:** According to our model, the probability of the disease occurring is {probability:.1f}%, which is considered **High risk** . "
+            f"We recommend you discuss these findings with your doctor or a relevant specialist as soon as possible to determine the next steps for care and follow-up."
         )  
     else:  # 如果预测为不需要疾病低风险
         advice = (
-            f"**Recommendation:** According to our model, you do not require electrical cardioversion. "
-            f"The probability of not needing electrical cardioversion is {probability:.1f}%. "
+            f"**Recommendation:** According to our model, the patient is at **low risk**. "
+            f"The probability of the disease **not occurring** is **{probability:.1f}%**. "
             "However, it is still important to continue regular monitoring of your heart health. "
             "Please ensure you maintain a healthy lifestyle and seek medical attention if needed."
         )  
