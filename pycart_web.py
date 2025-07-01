@@ -31,7 +31,7 @@ MRI_type_options = {
 st.title("Electrical Cardioversion Predictor")  # 电复律预测器
 
 image =Image.open("Snipaste_2025-07-01_13-45-35.png")
-st.image(image)
+st.image(image, use_column_width='auto')
 
 
 # Sidebar for input options
