@@ -19,13 +19,13 @@ def VSpace(px):
 model = load_model('best_model')  # 加载训练好的ET模型
 
 # Define the feature options
-PROM_type_options = {
-    0: 'PROM>18h',  
-    1: 'PROM<18h'  
+FEA1_type_options = {
+    0: 'FEA1<52',  
+    1: 'FEA1>52'  
 }
-MRI_type_options = {
-    0: 'No MRI',  
-    1: 'With MRI'  
+FEA4_type_options = {
+    0: 'No Surgery',  
+    1: 'With Surgery'  
 }
 
 # Streamlit UI
@@ -36,28 +36,24 @@ st.image(image )
 
 
 # Sidebar for input options
-st.sidebar.header("Input Sample Data")  # 侧边栏输入样本数据
+st.sidebar.header("Input Data")  # 侧边栏输入样本数据
 
-# Systolic BP input
-CRP = st.sidebar.number_input("CRP:", min_value=0, max_value=50, value=10)  # 收缩压输入框
+FEA5 = st.sidebar.number_input("FEA5:", min_value=0, max_value=50, value=10)  # 收缩压输入框
 
-# Age input
-IL6 = st.sidebar.number_input("IL6:", min_value=0, max_value=800, value=80)  # 年龄输入框
+FEA3 = st.sidebar.number_input("FEA3:", min_value=0, max_value=800, value=80)  # 年龄输入框
 
-# AST input
-S100B = st.sidebar.number_input("S100B:", min_value=0, max_value=500, value=100)  # AST输入框
+FEA2 = st.sidebar.number_input("FEA2:", min_value=0, max_value=500, value=100)  # AST输入框
 
-# AtrialFibrillationType input
-PROM = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys()), format_func=lambda x: PROM_type_options[x])  # 心房颤动类型选择框
+FEA1 = st.sidebar.selectbox("FEA1_type:", options=list(FEA1_type_options.keys()), format_func=lambda x: FEA1_type_options[x])  # 心房颤动类型选择框
 
-MRI = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), format_func=lambda x: MRI_type_options[x])  # 心房颤动类型选择框
+FEA4 = st.sidebar.selectbox("FEA4_type:", options=list(FEA4_type_options.keys()), format_func=lambda x: FEA4_type_options[x])  # 心房颤动类型选择框
 # 添加一个 50 像素的垂直空白
 VSpace(50)
 
 st.subheader("Process the input and make a prediction")
 # Process the input and make a prediction
-feature_values = [PROM, S100B, IL6, MRI, CRP ]  # 收集所有输入的特征
-features = pd.DataFrame([feature_values],columns= ["PROM", "S100B", "IL6", "MRI", "CRP" ] ) 
+feature_values = [FEA1, FEA2, FEA3, FEA4, FEA5 ]  # 收集所有输入的特征
+features = pd.DataFrame([feature_values],columns= ["FEA1", "FEA2", "FEA3", "FEA4", "FEA5" ] ) 
 
 if st.button("Make Prediction"):  # 如果点击了预测按钮
     # Predict the class and probabilities
