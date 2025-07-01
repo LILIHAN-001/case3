@@ -87,7 +87,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
     for i, v in enumerate([sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']]):  # 为每个条形图添加概率文本标签
-        plt.text(v + 0.001, i, f"{v:.2f}", va='center', fontsize=10, color='black', fontweight='bold')  # 设置标签位置、字体加粗
+        plt.text(v + 0.001, i, f"{v:.2f}", va='center', fontsize=10, color='black' )  # 设置标签位置、字体加粗
 
     # Hide other axes (top, right, bottom)
     plt.gca().spines['top'].set_visible(False)  # 隐藏顶部边框
