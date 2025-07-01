@@ -1,10 +1,11 @@
 import streamlit as st
-import joblib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pycaret.regression import *
 from pycaret.classification import *
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 
 # Load the trained model
 model = load_model('best_model')  # 加载训练好的ET模型
