@@ -131,8 +131,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     fig, ax = plt.subplots(figsize=(4, 2.5)) 
     # class_index = 1
-    
-    plt.figure(figsize=(4, 3)) 
+
     shap.force_plot(
     explainer.expected_value,
     shap_values[:,:],
