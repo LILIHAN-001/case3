@@ -68,7 +68,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
         )  # 如果预测为需要电复律，给出相关建议
     else:  # 如果预测为不需要电复律
         advice = (
-            f"**Recommendation:**According to our model, you do not require electrical cardioversion. "
+            f"**Recommendation:** According to our model, you do not require electrical cardioversion. "
             f"The probability of not needing electrical cardioversion is {probability:.1f}%. "
             "However, it is still important to continue regular monitoring of your heart health. "
             "Please ensure you maintain a healthy lifestyle and seek medical attention if needed."
@@ -83,7 +83,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     }
 
     # Set figure size
-    plt.figure(figsize=(10, 3))  # 设置图形大小
+    plt.figure(figsize=(5, 3))  # 设置图形大小
 
     # Create bar chart
     bars = plt.barh(['No Electrical Cardioversion', 'Needs Electrical Cardioversion'], 
