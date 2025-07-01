@@ -28,13 +28,13 @@ st.title("Electrical Cardioversion Predictor")  # 电复律预测器
 st.sidebar.header("Input Sample Data")  # 侧边栏输入样本数据
 
 # Systolic BP input
-CRP = st.sidebar.number_input("CRP:", min_value=0, max_value=50, value=0.5)  # 收缩压输入框
+CRP = st.sidebar.number_input("CRP:", min_value=0, max_value=50, value=1)  # 收缩压输入框
 
 # Age input
 IL6 = st.sidebar.number_input("IL6:", min_value=0, max_value=800, value=8)  # 年龄输入框
 
 # AST input
-S100B = st.sidebar.number_input("S100B:", min_value=0, max_value=500, value=0.5)  # AST输入框
+S100B = st.sidebar.number_input("S100B:", min_value=0, max_value=500, value=1)  # AST输入框
 
 # AtrialFibrillationType input
 PROM_type = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys()), format_func=lambda x: PROM_type_options[x])  # 心房颤动类型选择框
