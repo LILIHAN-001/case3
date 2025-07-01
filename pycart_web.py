@@ -135,10 +135,20 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     explainer.expected_value,
     shap_values[:,:],
     features,
-    matplotlib=True#,
+    matplotlib=True
 )
     plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
     plt.close(fig)
     st.image("shap_force_plot.png", use_container_width=True)
-
-    
+#hhhh
+    shap.waterfall_plot(
+    shap.Explanation(
+        values=shap_values[:,:],  
+        base_values=explainer.expected_value, # explainer.expected_value[class_index]
+        data=features,
+        feature_names=features.columns.tolist(),matplotlib=True
+    )
+)
+    plt.savefig("shap_waterfall_plot.png", bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    st.image("shap_waterfall_plot.png", use_container_width=True)
