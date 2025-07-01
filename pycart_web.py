@@ -37,9 +37,9 @@ IL6 = st.sidebar.number_input("IL6:", min_value=0, max_value=800, value=8)  # �
 S100B = st.sidebar.number_input("S100B:", min_value=0, max_value=500, value=1)  # AST输入框
 
 # AtrialFibrillationType input
-PROM_type = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys()), format_func=lambda x: PROM_type_options[x])  # 心房颤动类型选择框
+PROM = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys()), format_func=lambda x: PROM_type_options[x])  # 心房颤动类型选择框
 
-MRI_type = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), format_func=lambda x: MRI_type_options[x])  # 心房颤动类型选择框
+MRI = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), format_func=lambda x: MRI_type_options[x])  # 心房颤动类型选择框
 
 # Process the input and make a prediction
 feature_values = [PROM, S100B, IL6, MRI, CRP ]  # 收集所有输入的特征
