@@ -91,11 +91,11 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Add title and labels, set font bold and increase font size
     plt.title("Prediction Probability for Disease Occurrence", fontsize=12, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
-    plt.xlabel("Probability", fontsize=10 )  # 添加X轴标签，并设置字体大小和加粗
+    plt.xlabel("Probability", fontsize=8 )  # 添加X轴标签，并设置字体大小和加粗
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
     for i, v in enumerate([sample_prob['No Disease Occurrence'], sample_prob['Disease Occurrence']]):  # 为每个条形图添加概率文本标签
-        plt.text(v + 0.001, i, f"{v:.2f}", va='center', fontsize=8, color='black' )  # 设置标签位置、字体加粗
+        plt.text(v + 0.01, i, f"{v:.2f}", va='center', fontsize=8, color='black' )  # 设置标签位置、字体加粗
 
     # Hide other axes (top, right, bottom)
     plt.gca().spines['top'].set_visible(False)  # 隐藏顶部边框
