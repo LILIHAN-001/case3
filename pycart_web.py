@@ -41,9 +41,9 @@ PROM = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys())
 
 MRI = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), format_func=lambda x: MRI_type_options[x])  # 心房颤动类型选择框
 
+st.header("Process the input and make a prediction")
 # Process the input and make a prediction
 feature_values = [PROM, S100B, IL6, MRI, CRP ]  # 收集所有输入的特征
-# features = np.array([feature_values])  # 转换为NumPy数组
 features = pd.DataFrame([feature_values],columns= ["PROM", "S100B", "IL6", "MRI", "CRP" ] ) 
 
 if st.button("Make Prediction"):  # 如果点击了预测按钮
@@ -107,3 +107,4 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     st.write(advice)  # 显示建议
 
+    st.header("Feature importance")
