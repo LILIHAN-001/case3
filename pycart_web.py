@@ -2,10 +2,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from PIL import Image
 from pycaret.regression import *
 from pycaret.classification import *
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+st.set_page_config(layout="wide")
 
 def VSpace(px):
     """一个简单的函数，用于在 Streamlit 中创建指定像素的垂直空间"""
@@ -27,6 +29,10 @@ MRI_type_options = {
 
 # Streamlit UI
 st.title("Electrical Cardioversion Predictor")  # 电复律预测器
+
+image =Image.open("Snipaste_2025-07-01_13-45-35.png")
+st.image(image)
+
 
 # Sidebar for input options
 st.sidebar.header("Input Sample Data")  # 侧边栏输入样本数据
