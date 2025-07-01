@@ -71,7 +71,8 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
         'No Electrical Cardioversion': predicted_proba[0],  # 不需要电复律的概率
         'Needs Electrical Cardioversion': predicted_proba[1]  # 需要电复律的概率
     }
-
+    
+    VSpace(20)
     # Set figure size
     plt.figure(figsize=(5, 1))  # 设置图形大小
 
@@ -112,5 +113,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
         )  # 如果预测为不需要电复律，给出相关建议
 
     st.write(advice)  # 显示建议
+    
+    VSpace(50)
 
     st.header("Feature importance")
