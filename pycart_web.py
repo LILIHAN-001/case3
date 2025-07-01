@@ -88,7 +88,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     # Create bar chart
     bars = plt.barh(['No Electrical Cardioversion', 'Needs Electrical Cardioversion'], 
                     [sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']], 
-                    height=0.6, edgecolor="black", color=['#81abd3','#f8746b'])  # 绘制水平条形图
+                    height=0.6, edgecolor="black", color=['#81abd3','#fcd6d3'])  # 绘制水平条形图
 
     # Add title and labels, set font bold and increase font size
     plt.title("Prediction Probability for Electrical Cardioversion", fontsize=13, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
@@ -97,7 +97,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
     for i, v in enumerate([sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']]):  # 为每个条形图添加概率文本标签
-        plt.text(v + 0.0001, i, f"{v:.2f}", va='center', fontsize=10, color='black', fontweight='bold')  # 设置标签位置、字体加粗
+        plt.text(v + 0.001, i, f"{v:.2f}", va='center', fontsize=10, color='black', fontweight='bold')  # 设置标签位置、字体加粗
 
     # Hide other axes (top, right, bottom)
     plt.gca().spines['top'].set_visible(False)  # 隐藏顶部边框
