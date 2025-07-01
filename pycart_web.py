@@ -7,7 +7,7 @@ from pycaret.regression import *
 from pycaret.classification import *
 
 # Load the trained model
-model = load_model('best_model.pkl')  # 加载训练好的ET模型
+model = load_model('best_model')  # 加载训练好的ET模型
 
 # Define the feature options
 PROM_type_options = {
