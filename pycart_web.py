@@ -59,22 +59,6 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     # Generate advice based on the prediction result
     probability = predicted_proba[predicted_class] * 100  # 根据预测类别获取对应的概率，并转化为百分比
 
-    if predicted_class == 1:  # 如果预测为电复律治疗
-        advice = (
-            f"**Recommendation:** According to our model, you may require electrical cardioversion. "
-            f"The probability of needing electrical cardioversion is {probability:.1f}%. "
-            "This suggests that you may have a higher risk of requiring this treatment. "
-            "I recommend consulting with a cardiologist for further examination and possible treatment options."
-        )  # 如果预测为需要电复律，给出相关建议
-    else:  # 如果预测为不需要电复律
-        advice = (
-            f"**Recommendation:** According to our model, you do not require electrical cardioversion. "
-            f"The probability of not needing electrical cardioversion is {probability:.1f}%. "
-            "However, it is still important to continue regular monitoring of your heart health. "
-            "Please ensure you maintain a healthy lifestyle and seek medical attention if needed."
-        )  # 如果预测为不需要电复律，给出相关建议
-
-    st.write(advice)  # 显示建议
 
     # Visualize the prediction probabilities
     sample_prob = {
@@ -105,3 +89,22 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Show the plot
     st.pyplot(plt)  # 显示图表
+
+
+   if predicted_class == 1:  # 如果预测为电复律治疗
+        advice = (
+            f"**Recommendation:** According to our model, you may require electrical cardioversion. "
+            f"The probability of needing electrical cardioversion is {probability:.1f}%. "
+            "This suggests that you may have a higher risk of requiring this treatment. "
+            "I recommend consulting with a cardiologist for further examination and possible treatment options."
+        )  # 如果预测为需要电复律，给出相关建议
+    else:  # 如果预测为不需要电复律
+        advice = (
+            f"**Recommendation:** According to our model, you do not require electrical cardioversion. "
+            f"The probability of not needing electrical cardioversion is {probability:.1f}%. "
+            "However, it is still important to continue regular monitoring of your heart health. "
+            "Please ensure you maintain a healthy lifestyle and seek medical attention if needed."
+        )  # 如果预测为不需要电复律，给出相关建议
+
+    st.write(advice)  # 显示建议
+
