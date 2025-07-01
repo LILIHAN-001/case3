@@ -103,7 +103,8 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Show the plot
     st.pyplot(plt, use_container_width=True)  # 显示图表
-    
+    plt.close(plt)
+
     if predicted_class == 1:  # 如果预测为电复律治疗
         advice = (
             f"**Recommendation:** According to our model, you may require electrical cardioversion. "
@@ -140,7 +141,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     show=False
 )
     st.pyplot(fig, use_container_width=True)
-
+    plt.close(plt)
  #   plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
  #   st.image("shap_force_plot.png")
 
