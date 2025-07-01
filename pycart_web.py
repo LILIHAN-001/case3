@@ -82,9 +82,9 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
                     height=0.6, edgecolor="black", color=['#81abd3','#fcd6d3'])  # 绘制水平条形图
 
     # Add title and labels, set font bold and increase font size
-    plt.title("Prediction Probability for Electrical Cardioversion", fontsize=13, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
+    plt.title("Prediction Probability for Electrical Cardioversion", fontsize=12 )  # 添加图表标题，并设置字体大小和加粗
     plt.xlabel("Probability", fontsize=10, fontweight='bold')  # 添加X轴标签，并设置字体大小和加粗
-  #  plt.ylabel("Classes", fontsize=14, fontweight='bold')  # 添加Y轴标签，并设置字体大小和加粗
+  #  plt.ylabel("Classes", fontsize=10, fontweight='bold')  # 添加Y轴标签，并设置字体大小和加粗
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
     for i, v in enumerate([sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']]):  # 为每个条形图添加概率文本标签
