@@ -83,12 +83,12 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     }
 
     # Set figure size
-    plt.figure(figsize=(5, 3))  # 设置图形大小
+    plt.figure(figsize=(5, 2))  # 设置图形大小
 
     # Create bar chart
     bars = plt.barh(['No Electrical Cardioversion', 'Needs Electrical Cardioversion'], 
                     [sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']], 
-                    height=0.5, color=['#4caf50', '#81abd3'])  # 绘制水平条形图
+                    height=0.6, edgecolor="black", color=['#81abd3','#f8746b'])  # 绘制水平条形图
 
     # Add title and labels, set font bold and increase font size
     plt.title("Prediction Probability for Electrical Cardioversion", fontsize=13, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
