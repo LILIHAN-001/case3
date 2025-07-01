@@ -4,6 +4,6 @@ numpy
 pandas
 matplotlib
 scikit-learn
-shap=0.44.1
-pycaret=3.3.2
-scikit-learn=1.4.2
+shap==0.44.1
+pycaret==3.3.2
+scikit-learn==1.4.2
