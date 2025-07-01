@@ -141,7 +141,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 #     plt.close(fig)
 #     st.image("shap_force_plot.png", use_container_width=True)
 
-    fig, ax = plt.subplots(figsize=(3, 2.5))
+    fig, ax = plt.subplots(figsize=(5, 2.5))
     shap.waterfall_plot(
     shap.Explanation(
         values=shap_values[0], # shap_values[class_index][idx,:],
