@@ -103,7 +103,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Show the plot
     st.pyplot(plt, use_container_width=True)  # 显示图表
-    plt.close(plt)
+    
 
     if predicted_class == 1:  # 如果预测为电复律治疗
         advice = (
@@ -129,7 +129,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     explainer = shap.TreeExplainer(model_estimator)
     shap_values = explainer.shap_values(features)
 
-    # fig, ax = plt.subplots(figsize=(4, 3), dpi=300)
+    fig, ax = plt.subplots(figsize=(4, 2.5)) 
     # class_index = 1
     
     plt.figure(figsize=(4, 3)) 
@@ -138,11 +138,11 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     shap_values[:,:],
     features,
     matplotlib=True,
-    show=False
+    show=False,
+        ax=ax
 )
-    st.pyplot(fig, use_container_width=True)
-    plt.close(plt)
- #   plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
- #   st.image("shap_force_plot.png")
+    plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
+    plt.close(fig)
+    st.image("shap_force_plot.png", use_container_width=True)
 
     
