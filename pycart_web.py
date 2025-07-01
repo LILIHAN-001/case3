@@ -102,7 +102,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     plt.gca().spines['right'].set_visible(False)  # 隐藏右边框
 
     # Show the plot
-    st.pyplot(plt)  # 显示图表
+    st.pyplot(plt, use_container_width=True)  # 显示图表
     
     if predicted_class == 1:  # 如果预测为电复律治疗
         advice = (
