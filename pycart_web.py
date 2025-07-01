@@ -127,15 +127,14 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     model_estimator = model.named_steps['actual_estimator'] 
     explainer = shap.TreeExplainer(model_estimator)
     shap_values = explainer.shap_values(features)
-    plt.clf()
+
     fig, ax = plt.subplots(figsize=(4, 3), dpi=300)
     class_index = 1
     shap.force_plot(
-    explainer.expected_value[1],
+    explainer.expected_value,
     shap_values[:,:],
     features,
     matplotlib=True,
-    show=False,
     ax=ax
 )
     st.pyplot(fig, use_container_width=True)
