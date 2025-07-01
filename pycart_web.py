@@ -53,7 +53,7 @@ MRI = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), f
 # 添加一个 50 像素的垂直空白
 VSpace(50)
 
-st.header("Process the input and make a prediction")
+st.subheader("Process the input and make a prediction")
 # Process the input and make a prediction
 feature_values = [PROM, S100B, IL6, MRI, CRP ]  # 收集所有输入的特征
 features = pd.DataFrame([feature_values],columns= ["PROM", "S100B", "IL6", "MRI", "CRP" ] ) 
@@ -121,4 +121,4 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     
     VSpace(50)
 
-    st.header("Feature importance")
+    st.subheader("Feature importance")
