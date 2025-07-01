@@ -88,11 +88,11 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     # Create bar chart
     bars = plt.barh(['No Electrical Cardioversion', 'Needs Electrical Cardioversion'], 
                     [sample_prob['No Electrical Cardioversion'], sample_prob['Needs Electrical Cardioversion']], 
-                    color=['#4caf50', '#fe346e'])  # 绘制水平条形图
+                    height=0.5, color=['#4caf50', '#81abd3'])  # 绘制水平条形图
 
     # Add title and labels, set font bold and increase font size
-    plt.title("Prediction Probability for Electrical Cardioversion", fontsize=15, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
-    plt.xlabel("Probability", fontsize=12, fontweight='bold')  # 添加X轴标签，并设置字体大小和加粗
+    plt.title("Prediction Probability for Electrical Cardioversion", fontsize=13, fontweight='bold')  # 添加图表标题，并设置字体大小和加粗
+    plt.xlabel("Probability", fontsize=10, fontweight='bold')  # 添加X轴标签，并设置字体大小和加粗
   #  plt.ylabel("Classes", fontsize=14, fontweight='bold')  # 添加Y轴标签，并设置字体大小和加粗
 
     # Add probability text labels, adjust position to avoid overlap, set font bold
