@@ -128,14 +128,16 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     explainer = shap.TreeExplainer(model_estimator)
     shap_values = explainer.shap_values(features)
 
-    fig, ax = plt.subplots(figsize=(4, 3), dpi=300)
-    class_index = 1
+    # fig, ax = plt.subplots(figsize=(4, 3), dpi=300)
+    # class_index = 1
+    
+    plt.figure(figsize=(4, 3)) 
     shap.force_plot(
     explainer.expected_value,
     shap_values[:,:],
     features,
     matplotlib=True,
-    ax=ax
+    show=False
 )
     st.pyplot(fig, use_container_width=True)
 
