@@ -129,19 +129,18 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     explainer = shap.TreeExplainer(model_estimator)
     shap_values = explainer.shap_values(features)
 
-    fig, ax = plt.subplots(figsize=(3, 2.5)) 
+#     fig, ax = plt.subplots(figsize=(3, 2.5)) 
 
-    shap.force_plot(
-    explainer.expected_value,
-    shap_values[:,:],
-    features,
-    matplotlib=True
-)
-    plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
-    plt.close(fig)
-    st.image("shap_force_plot.png", use_container_width=True)
+#     shap.force_plot(
+#     explainer.expected_value,
+#     shap_values[:,:],
+#     features,
+#     matplotlib=True
+# )
+#     plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=300)
+#     plt.close(fig)
+#     st.image("shap_force_plot.png", use_container_width=True)
 
-    st.subheader("Feature importance222")
     fig, ax = plt.subplots(figsize=(3, 2.5))
     shap.waterfall_plot(
     shap.Explanation(
