@@ -67,7 +67,7 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     }
 
     # Set figure size
-    plt.figure(figsize=(5, 2))  # 设置图形大小
+    plt.figure(figsize=(5, 1))  # 设置图形大小
 
     # Create bar chart
     bars = plt.barh(['No Electrical Cardioversion', 'Needs Electrical Cardioversion'], 
