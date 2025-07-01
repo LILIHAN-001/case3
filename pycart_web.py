@@ -122,3 +122,17 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     VSpace(50)
 
     st.subheader("Feature importance")
+    model_estimator = model.named_steps['actual_estimator'] 
+    explainer = shap.TreeExplainer(model_estimator)
+    shap_values = explainer.shap_values(features)
+    
+    shap_fig = shap.force_plot(
+    explainer.expected_value,
+    shap_values[:,:],
+    features,
+    matplotlib=True
+)
+    plt.savefig("shap_force_plot.png", bbox_inches='tight', dpi=1200)
+    st.image("shap_force_plot.png")
+
+    
