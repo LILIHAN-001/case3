@@ -144,12 +144,13 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
     st.subheader("Feature importance222")
     fig, ax = plt.subplots(figsize=(3, 2.5))
     shap.waterfall_plot(
-        explainer.expected_value,
-        shap_values[:,:],  
-        features,
-        # feature_names=features.columns.tolist(),
-        matplotlib=True
-    )
+    shap.Explanation(
+        values=shap_values[0], # shap_values[class_index][idx,:],
+        base_values=explainer.expected_value, # explainer.expected_value[class_index]
+        data=features.values[0],
+        feature_names=features.columns.tolist()
+    ) 
+)
     plt.savefig("shap_waterfall_plot.png", bbox_inches='tight', dpi=300)
     plt.close(fig)
     st.image("shap_waterfall_plot.png", use_container_width=True)
