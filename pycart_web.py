@@ -89,9 +89,8 @@ if st.button("Make Prediction"):  # 如果点击了预测按钮
 
     # Show the plot
     st.pyplot(plt)  # 显示图表
-
-
-   if predicted_class == 1:  # 如果预测为电复律治疗
+    
+    if predicted_class == 1:  # 如果预测为电复律治疗
         advice = (
             f"**Recommendation:** According to our model, you may require electrical cardioversion. "
             f"The probability of needing electrical cardioversion is {probability:.1f}%. "
