@@ -7,6 +7,11 @@ from pycaret.classification import *
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
+def VSpace(px):
+    """一个简单的函数，用于在 Streamlit 中创建指定像素的垂直空间"""
+    st.markdown(f'<div style="margin-top: {px}px;"></div>', unsafe_allow_html=True)
+
+
 # Load the trained model
 model = load_model('best_model')  # 加载训练好的ET模型
 
@@ -18,7 +23,6 @@ PROM_type_options = {
 MRI_type_options = {
     0: 'No MRI',  # 发作性
     1: 'With MRI'  # 持续性
-
 }
 
 # Streamlit UI
@@ -40,6 +44,8 @@ S100B = st.sidebar.number_input("S100B:", min_value=0, max_value=500, value=1)  
 PROM = st.sidebar.selectbox("PROM_type:", options=list(PROM_type_options.keys()), format_func=lambda x: PROM_type_options[x])  # 心房颤动类型选择框
 
 MRI = st.sidebar.selectbox("MRI_type:", options=list(MRI_type_options.keys()), format_func=lambda x: MRI_type_options[x])  # 心房颤动类型选择框
+# 添加一个 50 像素的垂直空白
+VSpace(50)
 
 st.header("Process the input and make a prediction")
 # Process the input and make a prediction
